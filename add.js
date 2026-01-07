@@ -75,3 +75,21 @@ cancelBtn.addEventListener('click' , ()=>{
     totalPrice.textContent = `$ 0`;
     alert('No seat Selected');
 })
+
+// make the total seats selected visible in the page
+
+
+function fn() {
+  if (selectedSeats.length === 0) {
+    seatHolder.innerHTML = '<span class="noSelected">No Seat Selected</span>';
+  } else {
+    seatHolder.innerHTML = '';
+    
+    for (let i = 0; i < selectedSeats.length; i++){
+      const seats = document.createElement('span');
+      seats.classList.add('selectedSeat');
+      seats.textContent = 'S';
+      seatHolder.appendChild(seats);
+    }
+    }
+}
